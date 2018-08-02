@@ -3,7 +3,8 @@
 	"packOptions": {
 		"ignore": [
 			"server",
-			"cloud"
+			"cloud",
+			"tcb.json"
 		]
 	},
 	"setting": {
