@@ -1,6 +1,22 @@
 #  博客小程序案例
 
-## 配置小程序 id
+## 自动部署
+[tcb-cli初始化文档](https://github.com/TencentCloudBase/tcb-cli/blob/master/docs/init.md)
+
+```javascript
+npm i -g tcb-cli
+
+tcb init TencentCloudBase/tcb-demo-blog
+```
+
+
+## 手动部署
+### 下载或clone代码仓库
+```javascript
+git clone https://github.com/TencentCloudBase/tcb-demo-blog.git
+```
+
+### 配置小程序 id
 
 ```javascript
 // project.config.json
@@ -9,7 +25,7 @@
 }
 ```
 
-## 配置环境 id
+### 配置环境 id
 
 如果不填，则表示使用默认环境
 ```javascript
@@ -21,7 +37,7 @@ wx.cloud.init({
 });
 ```
 
-## 安装云函数依赖
+### 安装云函数依赖
 
 ```javascript
 // 安装依赖
@@ -29,8 +45,8 @@ cd cloud/functions/addblog/
 npm install --production
 ```
 
-## 上传云函数
+### 上传云函数
 在IDE中，右键云函数对应的文件夹，点击“上传并部署”菜单
 
-## 体验
+### 体验
 点击小程序开发IDE中的“预览”，用微信扫一扫即可体验
