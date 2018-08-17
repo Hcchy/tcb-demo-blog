@@ -1,5 +1,4 @@
-
-const app = require('tcb-admin-node');
+const cloud = require('wx-server-sdk');
 
 // 用于权限控制
 let whiteList = [];
@@ -12,16 +11,13 @@ exports.main = async (event, context) => {
     content,
     userInfo
   } = event;
+  console.log(event);
 
   let openId = userInfo.openId; // 添加博客者的openId
 
-  app.init({
-    env: '<%=env%>',
-    mpAppId: userInfo.appId,
-  });
-
+  cloud.init();
   // 数据库引用
-  const db = app.database();
+  const db = cloud.database();
   // 集合引用
   const collection = db.collection('blog');
 
@@ -36,10 +32,12 @@ exports.main = async (event, context) => {
   
   try {
     result = await collection.add({
-      cover,
-      title,
-      content,
-      // _openid: openId
+      data: {
+        cover,
+        title,
+        content,
+        _openid: openId
+      }
     });
   }
   catch(e) {
