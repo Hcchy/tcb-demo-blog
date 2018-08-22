@@ -1,13 +1,7 @@
 #  博客小程序案例
 
 ## 自动部署
-[tcb-cli初始化文档](https://github.com/TencentCloudBase/tcb-cli/blob/master/docs/init.md)
-
-```javascript
-npm i -g tcb-cli
-
-tcb init TencentCloudBase/tcb-demo-blog
-```
+敬请期待。
 
 
 ## 手动部署
